@@ -207,6 +207,7 @@ section { padding-block: clamp(64px, 9vw, 120px) 0; }
 /* about */
 .about { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); }
 .portrait { border-radius: 50%; aspect-ratio: 1; object-fit: cover; width: min(100%, 240px); border: 2px solid var(--accent); }
+.about .intro p + p { margin-top: 10px; }
 .about .intro p { margin: 18px 0 0; font-size: 17px; font-weight: 300; max-width: 30ch; line-height: 1.7; }
 .about h4 { margin: 0 0 14px; }
 .career { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line); }
@@ -642,7 +643,8 @@ h1 .ko, h2 .ko, h3 .ko, h4 .ko, .ph-brand .ko, .ed-copy h4 .ko { letter-spacing:
     <div class="about">
       <div class="intro">
         <img class="portrait" src="img/me.jpg" alt="홍연진 프로필 사진">
-        <p>모션그래픽과 3D 기반의 시각 경험을 바탕으로,<br>현재는 AI를 활용해 브랜드 콘텐츠의 기획부터 제작·편집까지 확장하고 있습니다.</p>
+        <div><p>모션그래픽과 3D를 기반으로 9년간 다양한 시각 콘텐츠를 제작해왔습니다.</p>
+        <p>현재는 AI를 제작 워크플로우에 접목해 브랜드 콘텐츠의 기획부터 제작·편집까지 영역을 확장하고 있습니다.</p></div>
       </div>
       <div>
         <h4 class="mono">Experience</h4>
@@ -661,9 +663,13 @@ h1 .ko, h2 .ko, h3 .ko, h4 .ko, .ph-brand .ko, .ed-copy h4 .ko { letter-spacing:
       <div>
         <h4 class="mono">Tool Skill</h4>
         <div class="tools" id="tools"></div>
-        <h4 class="mono" style="margin-top:26px">AI Tools</h4>
+        <h4 class="mono" style="margin-top:26px">Generative AI</h4>
         <div class="ai-tags">
-          <span>Claude</span><span>ChatGPT</span><span>Gemini</span><span>Antigravity</span><span>ComfyUI</span><span>Suno</span><span>Flow</span><span>Higgsfield</span><span>Kling</span><span>Midjourney</span><span>Weavy</span><span>Topaz</span>
+          <span>ComfyUI</span><span>Midjourney</span><span>Veo / Flow</span><span>Higgsfield</span><span>Kling</span>
+        </div>
+        <h4 class="mono" style="margin-top:20px">AI Workflow</h4>
+        <div class="ai-tags">
+          <span>ChatGPT</span><span>Claude</span><span>Gemini</span><span>Topaz</span>
         </div>
       </div>
     </div>
