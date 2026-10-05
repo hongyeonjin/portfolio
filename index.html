@@ -574,6 +574,8 @@ h1 .ko, h2 .ko, h3 .ko, h4 .ko, .ph-brand .ko, .ed-copy h4 .ko { letter-spacing:
 .pd-hl { font-family: var(--display); font-weight: 600; font-size: clamp(18px, 1.7vw, 24px); line-height: 1.2; color: var(--text); margin-top: -6px; }
 .pd-hl span { display: block; font-family: var(--body); font-weight: 400; font-size: 15px; color: var(--mute); margin-top: 6px; }
 .pd-body .watch-row, .aq-text > .watch { margin-top: -4px; }
+/* cards in the same grid row: keep text tight under the image instead of spreading to match a taller neighbour */
+.card { align-content: start; }
 </style>
 
 <header class="top">
@@ -822,6 +824,7 @@ const ORDER2 = ["vital", ...ORDER];
 W.sort((a, b) => ORDER2.indexOf(a.id) - ORDER2.indexOf(b.id));
 const byId = Object.fromEntries(W.map(w => [w.id, w]));
 byId.teazen.img = "img/g-tz-1.jpg"; byId.teazen.f = "Case Study";
+Object.assign(byId.teazen, { s: "Video Editing · AI Film · Motion Graphics · Reels", d: "2026.03 — Present", roles: ["Video Editing", "AI Film", "Motion Graphics", "Reels"] });
 byId.itsskin.img = "img/g-its-1.jpg"; byId.itsskin.f = "Case Study";
 // images the owner supplied through the slot folders
 const IMG_OVR = { vital: "img/vital-card.jpg", bhc: "img/p-bhc.jpg", iherb: "img/p-iherb.jpg", skin1004: "img/p-skin1004.jpg",
