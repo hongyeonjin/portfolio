@@ -755,7 +755,7 @@ const CH = [
 const OLD = { "04":"stage","05":"stage","06":"stage","07":"stage",
   "11":"title","13":"title","14":"title","16":"title","15":"title","17":"title","10":"title",
   "08":"3d","09":"3d","24":"3d", "18":"campaign","20":"campaign","19":"product","21":"human" };
-const ORDER = ["04","05","06","07","22","11","12","13","14","16","15","17","10","08","09","dim","24",
+const ORDER = ["04","05","06","07","ces","22","11","12","13","14","16","15","17","10","08","09","dim","24",
   "gs","18","bhc","20","iherb","hancom","skin1004","primera","aquapick","olive","19","itsskin","teazen","drcos","drcos2","21"];
 const SUBT = { "18": "Winter Campaign · AI 광고 엔딩 비주얼", "20": "AI Concept Film", "19": "AI Beauty / Viral Visuals" };
 const OLD_ROLES = { "18":["Concept","AI Image","AI Video","Edit"], "19":["AI Visual","AI Video","Motion"], "20":["Concept","AI Film"], "21":["AI Direction","Compositing"], "23":["Motion"] };
@@ -772,6 +772,10 @@ const NEW = [
   { id: "dim", c: "3d", t: "3D Dimensional Film", s: "Banner Motion Graphics", img: "img/w-dim.jpg", ph: false, co: "Caliverse", d: "2026.02", tool: "Cinema 4D / Redshift / After Effects / Photoshop / Illustrator", r: "Planning / 2D·3D Design / Animation", p: 80, f: "3D Film", roles: ["Planning", "2D·3D Design", "Animation"],
     desc: "한 장의 필름이 화면의 깊이를 바꾸는 순간을 시각화한 광고 배너 모션. 필름을 붙이는 순간 요소들이 앞뒤로 갈라지며 평면이 공간으로 열리도록 연출했고, 과한 튀어나옴 대신 Z축 간격, 카메라 이동, 빛과 그림자의 농도를 조율해 '느껴지는 깊이'에 집중했습니다. 짧은 노출 환경에서도 메시지가 바로 읽히도록 전환 속도와 화면 밀도를 다듬었습니다.",
     links: [["Behance", "https://www.behance.net/gallery/244682647/3D-Dimensional-Film"]] },
+  { id: "ces", c: "stage", t: "CES 2025 Booth", s: "Screen Wall · 롯데 부스 디스플레이", img: "img/p-ces.jpg", ph: false, co: "Caliverse", d: "2024.12", f: "Screen Wall", p: 90,
+    r: "Planning / Design / Animation", tool: "Cinema 4D / After Effects / Octane", roles: ["Planning", "Design", "Animation"],
+    desc: "2025 CES를 위한 롯데 부스 디스플레이 영상 작업을 진행했습니다.\n4개의 기둥이 서로 연결되어 보이는 스크린 작업을 통해, 타이포그래피, 텐션감 있는 바운스 공 모션, 텍스트 모션을 조합하여 역동적이고 임팩트 있는 비주얼을 완성했습니다.",
+    links: [["Behance", "https://www.behance.net/gallery/233167561/CES2025"]] },
   { id: "gs", c: "campaign", t: "GS SHOP", s: "Chuseok Seasonal Promotion", co: "UDM", d: "2026", f: "Key Visual", ai: true, ph: false, img: "img/gs-wide.jpg",
     roles: ["Proposal", "Key Visual Direction", "AI Image Production"],
     desc: "Led the key visual direction for a competitive agency proposal and developed AI-generated seasonal campaign imagery. 경쟁 비딩 제안에서 키비주얼 방향을 주도해 수주에 성공했고, 이후 추석 시즌 프로모션용 AI 캠페인 이미지를 제작했습니다." },
@@ -859,7 +863,7 @@ $("#track").innerHTML = strip + strip;
 const SLOT = { vital: "01", itsskin: "02", teazen: "03", gs: "04",
   "04": "05", "05": "06", "06": "07", "07": "08", "11": "09", "13": "10", "14": "11", "16": "12", "15": "13", "17": "14", "10": "15",
   "08": "16", "09": "17", dim: "18", "24": "19", "18": "20", bhc: "21", "20": "22", iherb: "23", hancom: "24",
-  skin1004: "25", primera: "26", aquapick: "27", olive: "28", "19": "29", chasing: "30", kmong: "31", drcos: "32", drcos2: "33", "21": "34" };
+  skin1004: "25", primera: "26", aquapick: "27", olive: "28", "19": "29", chasing: "30", kmong: "31", drcos: "32", drcos2: "33", "21": "34", ces: "35" };
 const tag = c => `<i class="slot">${c}</i>`;
 const card = w => `
   <button class="card" type="button" data-id="${w.id}">
