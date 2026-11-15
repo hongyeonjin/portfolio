@@ -498,6 +498,10 @@ body.slots .slot { display: block; }
 @media (max-width: 1024px) { .vb3 { grid-template-columns: minmax(0, 1fr); } }
 .sc-badge { display: inline-block; margin: 0 6px 4px 0; padding: 2px 8px; border-radius: 999px; font: 600 10.5px var(--mono); letter-spacing: .02em; color: var(--accent); border: 1px solid var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); vertical-align: 1px; }
 .exp-sub { color: var(--mute); font-weight: inherit; }
+.bt-video { margin: 0; position: relative; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.02); }
+.bt-video video { width: 100%; max-width: 100%; aspect-ratio: 16/9; display: block; background: #000; }
+.bt-video figcaption { padding: 10px 12px 12px; font-size: 13px; font-weight: 600; color: #d6cec7; word-break: keep-all; }
+.bt-video > .slot { position: absolute; left: 10px; top: 10px; }
 /* TEAZEN video series (Angle Studio foundation: pill label, bold heading, bordered cards with the text below the image) */
 .tzs { margin-top: var(--s6); display: grid; gap: var(--s10); background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: clamp(20px, 3.4vw, 48px); }
 .tzs-pill { display: inline-flex; align-items: center; justify-self: start; font: 600 13px/1 var(--body); color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); padding: 7px 14px; border-radius: 999px; white-space: nowrap; }
@@ -772,6 +776,7 @@ h1 .ko, h2 .ko, h3 .ko, h4 .ko, .ph-brand .ko, .ed-copy h4 .ko { letter-spacing:
             <figure class="sw"><i class="slot">37-2</i><img src="img/bt-uf-flow.jpg" alt="요청에서 완료까지 6단계 업무 흐름" loading="lazy"><figcaption>업무 흐름 · 요청에서 완료까지 6단계</figcaption></figure>
             <figure class="sw"><i class="slot">37-3</i><img src="img/bt-uf-features.jpg" alt="유디엠 플로우 주요 기능 12가지" loading="lazy"><figcaption>주요 기능 12가지</figcaption></figure>
           </div>
+          <figure class="bt-video sw"><i class="slot">37-4</i><video src="img/udmflow-guide.mp4" poster="img/udmflow-guide.jpg" controls playsinline preload="metadata" aria-label="유디엠 플로우 사용자 가이드 영상"></video><figcaption>사용자 가이드 영상 · <span class="nb">로그인부터 업무 요청 · 결과물 제출 · 캘린더까지</span> · 14분</figcaption></figure>
         </article>
         <article class="bt" id="bt-angle">
           <div class="bt-top">
@@ -789,7 +794,7 @@ h1 .ko, h2 .ko, h3 .ko, h4 .ko, .ph-brand .ko, .ed-copy h4 .ko { letter-spacing:
               <dl class="pd-dl">
                 <dt>DATE</dt><dd>2026.11</dd>
                 <dt>ROLE</dt><dd><span class="nb">Planning</span> / <span class="nb">UX · UI Design</span> / <span class="nb">Development</span></dd>
-                <dt>TOOL</dt><dd><span class="nb">three.js</span> / <span class="nb">Gemini API</span> / <span class="nb">GPT API</span></dd>
+                <dt>TOOL</dt><dd><span class="nb">Claude</span> / <span class="nb">Gemini API</span> / <span class="nb">GPT API</span></dd>
               </dl>
             </div>
           </div>
