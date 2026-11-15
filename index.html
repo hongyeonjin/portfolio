@@ -487,6 +487,15 @@ body.slots .slot { display: block; }
 .bt-shots img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #fff; }
 .bt-shots figcaption { padding: 10px 12px 12px; font-size: 13px; font-weight: 600; color: #d6cec7; word-break: keep-all; }
 @media (max-width: 900px) { .bt-top, .bt-shots { grid-template-columns: minmax(0, 1fr); } }
+.vb3-lead { margin: 0; color: #d6cec7; max-width: 46em; line-height: 1.75; word-break: keep-all; }
+.vb3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.vb3-pair { display: grid; grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr); gap: 8px; align-items: center; padding: 12px; border: 1px solid var(--line); border-radius: 14px; }
+.vb3-pair figure { margin: 0; display: grid; gap: 6px; min-width: 0; }
+.vb3-pair img, .vb3-pair video { width: 100%; height: auto; display: block; object-fit: cover; border-radius: 10px; background: #000; }
+.vb3-pair figcaption { font-size: 12px; font-weight: 600; color: #d6cec7; line-height: 1.4; word-break: keep-all; }
+.vb3-ar { color: var(--accent); font: 700 18px var(--mono); text-align: center; }
+.vb3 .slot { position: static; justify-self: start; margin: 0 0 4px; box-shadow: none; }
+@media (max-width: 1024px) { .vb3 { grid-template-columns: minmax(0, 1fr); } }
 /* TEAZEN video series (Angle Studio foundation: pill label, bold heading, bordered cards with the text below the image) */
 .tzs { margin-top: var(--s6); display: grid; gap: var(--s10); background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: clamp(20px, 3.4vw, 48px); }
 .tzs-pill { display: inline-flex; align-items: center; justify-self: start; font: 600 13px/1 var(--body); color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); padding: 7px 14px; border-radius: 999px; white-space: nowrap; }
@@ -1099,9 +1108,11 @@ const CASE = {
       </div>
       <div class="roles big"><span>Content Planning</span><span>Visual Direction</span><span>AI Image &amp; Film</span><span>Reels</span><span>Motion Graphics</span><span>Content Format Development</span></div>
       <ol class="months wide">
-        <li><b>2026.09–10</b><span><span class="nb">다이소 세븐 펩타이드 콜라겐 라인</span> · <span class="nb">밀레니얼 vs 젠지 마케팅팀 릴스</span> · <span class="nb">데스크 위 콜라겐 앰플 영상</span> · <span class="nb">10월 다이소 보습 처방전 피드</span></span></li>
-        <li><b>2026.06–08</b><span><span class="nb">웨딩드레스 퓨어크림 시즌 캠페인</span> · <span class="nb">딸기·데이지 제품 비주얼</span> · <span class="nb">해변 쿨러 썸머 컷</span> · <span class="nb">바닷가 AI 릴스</span> · <span class="nb">드레스 실루엣 키비주얼</span></span></li>
-        <li><b>2026.05</b><span><span class="nb">포어 리프트 런칭 콘텐츠</span> · <span class="nb">클리니컬 랩 AI 비주얼</span> · <span class="nb">생산 라인 AI 영상</span></span></li>
+        <li><b>2026.11</b><span><span class="nb">감초줄렌 티징</span></span></li>
+        <li><b>2026.09–10</b><span><span class="nb">다이소 세븐 펩타이드 콜라겐 라인</span> · <span class="nb">밀레니얼 vs 젠지 마케팅팀 릴스</span> · <span class="nb">데스크 위 콜라겐 앰플 영상</span> · <span class="nb">10월 다이소 보습 처방전 피드</span> · <span class="nb">10월 3주차 콘텐츠</span> · <span class="nb">9월 다이소 장바구니</span> · <span class="nb">마우스휠</span> · <span class="nb">보습메이트</span></span></li>
+        <li><b>2026.06–08</b><span><span class="nb">웨딩드레스 퓨어크림 시즌 캠페인</span> · <span class="nb">딸기·데이지 제품 비주얼</span> · <span class="nb">해변 쿨러 썸머 컷</span> · <span class="nb">바닷가 AI 릴스</span> · <span class="nb">드레스 실루엣 키비주얼</span> · <span class="nb">7월 휴가 필수템</span> · <span class="nb">아이스박스</span> · <span class="nb">톤업 솔루션</span> · <span class="nb">톤업데이</span> · <span class="nb">8월 다이소 대란템</span></span></li>
+        <li><b>2026.05</b><span><span class="nb">포어 리프트 런칭 콘텐츠</span> · <span class="nb">클리니컬 랩 AI 비주얼</span> · <span class="nb">생산 라인 AI 영상</span> · <span class="nb">멜팅패치 제품명 · 하우투유즈 · 효과 캐러셀</span> · <span class="nb">콜라겐 100%</span></span></li>
+        <li><b>2026.04</b><span><span class="nb">4월 티징 콘텐츠</span> · <span class="nb">뷰티 실험실</span> · <span class="nb">모공패치 런칭 영상</span></span></li>
       </ol>
 `,
   teazen: `
@@ -1134,8 +1145,8 @@ const CASE = {
 `,
 };
 const TZS = [{"k": "shot", "no": "01", "t": "Double Shot", "d": "2026.10", "n": "4편", "cover": "ds0", "desc": "화이트 발사믹 더블샷 런칭에 맞춰 런칭 영상과 올리브 · 레드 · 엘더베리 제품별 영상을 같은 톤으로 이어지게 제작했습니다.", "links": [["올리브 더블샷 게시물", "https://www.instagram.com/p/De0UJ-jnx91/"], ["레드 트리플샷 게시물", "https://www.instagram.com/p/De0UE9iH2yd/"], ["엘더베리 더블샷 게시물", "https://www.instagram.com/p/De0T9PEH-fP/"]], "items": [["ds0", "화이트 발사믹 더블샷 · 런칭", "9/16"], ["ds1", "올리브 더블샷", "9/16"], ["ds2", "레드 트리플샷", "9/16"], ["ds3", "엘더베리 더블샷", "9/16"]]}, {"k": "halloween", "no": "02", "t": "Halloween × Energy Tea", "d": "2026.11", "n": "4편", "cover": "hw1", "desc": "할로윈 파티 콘셉트로 에너지티 피드 영상을 표지와 내지로 나눠 시리즈로 구성했습니다.", "links": [["할로윈 릴스", "https://www.instagram.com/reel/DfHGdZhP2al/"], ["할로윈 피드 게시물", "https://www.instagram.com/p/DfHGYN8H3fR/"]], "items": [["hw1", "01 · 표지", "4/5"], ["hw2", "01 · 내지", "4/5"], ["hw3", "02 · 표지", "4/5"], ["hw4", "03 · 표지", "4/5"]]}, {"k": "twice", "no": "03", "t": "TWICE PICK Recipe", "d": "2026.06", "n": "9편 · KR / EN", "cover": "tw8", "desc": "트와이스 멤버별 레시피 9편을 과일 · 말풍선 · 하프톤의 팝아트 템플릿 하나로 통일해, 한 편씩 올라가도 캠페인처럼 이어지게 만들었습니다.", "links": [], "items": [["tw1", "베리 꿀 애플티 스파클링 · 채영", "9/16"], ["tw2", "피치 얼그레이 스파클링 · 모모", "9/16"], ["tw3", "망고 구아바 캐럿 펀치 · 다현", "9/16"], ["tw4", "매실 토마토 바질 에이드 · 지효", "9/16"], ["tw5", "유자 꿀캐모마일 스파클링 · 쯔위", "9/16"], ["tw6", "레몬 라씨 · 사나", "9/16"], ["tw7", "코코 샤인 에이드 · 미나", "9/16"], ["tw8", "파인애플 고수 그라니따 · 나연", "9/16"], ["tw9", "청귤 라임 깻잎 모히또 · 정연", "9/16"]]}, {"k": "season", "no": "04", "t": "Season & Special", "d": "2026.04–09", "n": "7편", "cover": "ss3", "desc": "벚꽃 시즌, 다현의 망고 구아바, 망고 빙수 레시피부터 9월 피드 영상까지, 시즌과 이슈에 맞춰 만든 영상들입니다.", "links": [], "items": [["ss1", "벚꽃 콤부차 · 4월", "9/16"], ["ss2", "다현의 망고 구아바 · 5월", "9/16"], ["ss3", "티젠 레시피 망고 빙수 · 5월", "9/16"], ["ss4", "콤부차로 기분 ON · 9월", "4/5"], ["ss5", "애사비와 감정 세포 ON · 9월", "4/5"], ["ss6", "쏙 시리즈 · 9월", "4/5"], ["ss7", "에너지티 · 9월", "4/5"]]}, {"k": "summer", "no": "05", "t": "Summer Recipe", "d": "2026.07", "n": "3편", "cover": "sm3", "desc": "여름 시즌 레시피 3종을 짧은 4:5 피드 영상으로, 같은 구도와 리듬 안에서 재료만 바뀌도록 정리했습니다.", "links": [], "items": [["sm1", "멜론 밀크쉐이크", "4/5"], ["sm2", "자두 선셋 스무디", "4/5"], ["sm3", "피치 에너지 부스트", "4/5"]]}];
-const SC = {"vital": [["vb1", "메타그린 젤리 더블컷 · 6월", "9/16", "v"], ["vb2", "MATCH YOUR HAPPY ROUTINE · 8월", "9/16", "v"], ["vb3", "슈퍼레티놀 젤리 · 9월", "4/5", "v"], ["vb4", "레티놀도, 맛있게 톡! · 10월", "9/16", "v"], ["vb5", "탱글 한 입, 레티놀 한 포 · 11월", "9/16", "v"], ["vi1", "SUMMER DRIVE · 7월", "4/5", "i"], ["vi2", "Orange Jelly Crush · 8월", "4/5", "i"], ["vi4", "PURE PDRN, PURE ROUTINE · 9월", "4/5", "i"], ["vi5", "POP-UP STORE COMING SOON · 10월", "4/5", "i"], ["vi6", "ONE STICK, SUPER GLOW · 11월", "4/5", "i"]], "itsskin": [["is1", "모공패치 런칭 영상", "9/16", "v"], ["is2", "휴가 필수템 · 7월", "9/16", "v"], ["is3", "젠지 마케팅팀 · 9월", "4/5", "v"]], "primera": [["pr1", "팩폼 티징 · 8월", "9/16", "v"], ["pr2", "3C 히알루론산 · 피드 01", "4/5", "i"], ["pr3", "3C 히알루론산 · 피드 02", "4/5", "i"]], "drcos": [["dc1", "Dr.COS 앰플 · AI 인물 광고", "9/16", "v"]], "drcos2": [["nm1", "노모크 토너패드", "9/16", "v"], ["nm2", "노모크 슬리핑팩 · 기상캐스터", "9/16", "v"], ["nm3", "노모크 · 햄찌", "9/16", "v"]]};
-const scItem = ([k, t, r, kind], code) => `<figure>${tag(code)}${kind === "v"
+const SC = {"vital": [["h1", "메타그린 젤리 더블컷 · 6월", "9/16", "v"], ["h2", "NEW 슈퍼콜라겐 PDRN · 9월", "9/16", "v"], ["h3", "레티놀도, 맛있게 톡! · 10월", "9/16", "v"], ["h4", "MERRY MOMENTS, METAGREEN · 12월", "9/16", "v"]], "primera": [["pr1", "팩폼 티징 · 8월", "9/16", "v"], ["pr2", "3C 히알루론산 · 피드 01", "4/5", "i"], ["pr3", "3C 히알루론산 · 피드 02", "4/5", "i"]], "drcos": [["dc1", "Dr.COS 앰플 · AI 인물 광고", "9/16", "v"]], "drcos2": [["nm1", "노모크 토너패드", "9/16", "v"], ["nm2", "노모크 슬리핑팩 · 기상캐스터", "9/16", "v"], ["nm3", "노모크 · 햄찌", "9/16", "v"]]};
+const scItem = ([k, t, r, kind], code) => /^h\d$/.test(k) ? vbFig([k, t, r, kind], code) : `<figure>${tag(code)}${kind === "v"
   ? `<video src="img/sc-${k}.mp4" poster="img/sc-${k}.jpg" controls playsinline preload="none" style="aspect-ratio:${r}" aria-label="${esc(t)}"></video>`
   : `<img src="img/sc-${k}.jpg" alt="${esc(t)}" loading="lazy" style="aspect-ratio:${r}">`}<figcaption>${esc(t)}</figcaption></figure>`;
 const scHTML = id => { const s = SC[id]; if (!s) return ""; return `
@@ -1144,6 +1155,26 @@ const scHTML = id => { const s = SC[id]; if (!s) return ""; return `
     ${["9/16", "4/5", "16/9"].map(ratio => s.map((it, i) => [it, i]).filter(([it]) => it[2] === ratio)).filter(g => g.length)
       .map(g => `<div class="tzs-grid">${g.map(([it, i]) => scItem(it, `${SLOT[id]}-W${i + 1}`)).join("")}</div>`).join("")}
   </section>`; };
+const VB3D = [[["3d1", "3D 블로킹 · 오렌지와 스틱 젤리", "9/16", "i"], ["ai1", "AI 결과 · 메타그린 젤리 더블컷", "9/16", "i"]], [["3d2", "3D 블로킹 · 제품과 캡슐 배치", "4/5", "v"], ["ai2", "AI 결과 · ONE BITE LATER", "9/16", "v"]], [["3d3", "3D 블로킹 · 형태와 크기", "9/16", "v"], ["ai3", "AI 결과 · 쿠키 컷", "9/16", "v"]]];
+const VBS = [{"k": "vb-rt", "no": "01", "t": "슈퍼레티놀 젤리", "d": "2026.10–11", "n": "9장", "cover": "rt1", "desc": "레티놀 젤리 런칭부터 성수 팝업 ‘SUPER GLOW SAUNA’까지, 노란 스틱과 레몬으로 이어지는 피드 시리즈.", "items": [["rt1", "WHY SUPER RETINOL 1", "4/5", "i"], ["rt2", "WHY SUPER RETINOL 2", "4/5", "i"], ["rt3", "RESET YOUR SKIN RHYTHM", "4/5", "i"], ["rt4", "POP-UP STORE COMING SOON 1", "4/5", "i"], ["rt5", "POP-UP STORE COMING SOON 2", "4/5", "i"], ["rt6", "MEET YOUR NEW GLOW 1", "4/5", "i"], ["rt7", "MEET YOUR NEW GLOW 2", "4/5", "i"], ["rt8", "ONE STICK, SUPER GLOW 1", "4/5", "i"], ["rt9", "TASTE YOUR GLOW", "4/5", "i"]]}, {"k": "vb-pd", "no": "02", "t": "슈퍼콜라겐 PDRN", "d": "2026.09", "n": "7장", "cover": "pd1", "desc": "NEW 슈퍼콜라겐 PDRN 런칭 피드. 성분 설명 카드와 제품 비주얼을 같은 톤으로 묶었습니다.", "items": [["pd1", "NEW 슈퍼콜라겐 PDRN 1", "4/5", "i"], ["pd2", "NEW 슈퍼콜라겐 PDRN 2", "9/16", "i"], ["pd3", "WHY SUPER COLLAGEN PDRN 1", "4/5", "i"], ["pd4", "WHY SUPER COLLAGEN PDRN 2", "4/5", "i"], ["pd5", "Inside the Booster Shot 1", "4/5", "i"], ["pd6", "Inside the Booster Shot 2", "4/5", "i"], ["pd7", "Professional Care, At Home", "4/5", "i"]]}, {"k": "vb-mg", "no": "03", "t": "메타그린 젤리 더블컷", "d": "2026.06–08", "n": "5장", "cover": "mg1", "desc": "오렌지 컬러와 일상 소품으로 젤리 더블컷을 보여 준 여름 시즌 피드.", "items": [["mg1", "Fresh Jelly, On Diet", "4/5", "i"], ["mg2", "SUMMER-DRIVE", "4/5", "i"], ["mg3", "Orange Jelly Crush 1", "4/5", "i"], ["mg4", "SEE THE EASY ROUTINE 1", "4/5", "i"], ["mg5", "SEE THE EASY ROUTINE 2", "4/5", "i"]]}, {"k": "vb-na", "no": "04", "t": "올리브영 북미 런칭", "d": "2026.05", "n": "2장", "cover": "na1", "desc": "올리브영 미국 매장 오픈에 맞춘 티징 · 그랜드 오픈 이미지.", "items": [["na1", "올영 북미 티징", "4/5", "i"], ["na2", "올영 북미 그랜드 오픈", "4/5", "i"]]}];
+const vbFig = ([k, t, r, kind], code) => `<figure>${tag(code)}${kind === "v"
+  ? `<video src="img/vb-${k}.mp4" poster="img/vb-${k}.jpg" controls playsinline preload="none" style="aspect-ratio:${r}" aria-label="${esc(t)}"></video>`
+  : `<img src="img/vb-${k}.jpg" alt="${esc(t)}" loading="lazy" style="aspect-ratio:${r}">`}<figcaption>${esc(t)}</figcaption></figure>`;
+const vbExtra = () => `
+  <section class="tzs" aria-label="바이탈뷰티 3D × AI">
+    <div class="tzs-head"><span class="tzs-pill">3D × AI · 메타그린 · ONE BITE LATER · 2026.06–07</span><h4>3D BLOCKING → AI</h4></div>
+    <p class="vb3-lead">3D로 <span class="nb">구도 · 형태를 먼저 잡고,</span> <span class="nb">AI로 실사화했습니다.</span> 로우폴리 회색 모델로 <span class="nb">제품 · 소품 위치와 카메라를 정한 뒤,</span> <span class="nb">그 구도 그대로 AI 이미지 · 영상을 만들었습니다.</span></p>
+    <div class="vb3">${VB3D.map(([a, b], i) => `<div class="vb3-pair">${vbFig(a, `01-3D${i + 1}a`)}<span class="vb3-ar" aria-hidden="true">→</span>${vbFig(b, `01-3D${i + 1}b`)}</div>`).join("")}</div>
+  </section>
+  <section class="tzs" aria-label="바이탈뷰티 이미지 시리즈">
+    <div class="tzs-head"><span class="tzs-pill">Image Series · ${VBS.reduce((a, s) => a + s.items.length, 0)} Images</span><h4>CONTENTS</h4></div>
+    <div class="tzs-index">${VBS.map((s, si) => `<button type="button" class="tzs-card" data-tzs="${s.k}"><span class="tzs-thumb"><img src="img/vb-${s.cover}.jpg" alt="" loading="lazy"></span><span class="tzs-body">${tag("01-S" + (si + 1))}<span class="tzs-no">${s.no}</span><strong>${esc(s.t)}</strong><span class="tzs-meta">${s.d} · ${s.n}</span></span></button>`).join("")}</div>
+    ${VBS.map((s, si) => `<div class="tzs-sec" id="tzs-${s.k}">
+      <div class="tzs-sec-head"><span class="tzs-pill">${s.no}</span><h5>${esc(s.t)}</h5><span class="tzs-meta">${s.d} · ${s.n}</span></div>
+      <p>${esc(s.desc)}</p>
+      ${["9/16", "4/5"].map(ratio => s.items.map((it, vi) => [it, vi]).filter(([it]) => it[2] === ratio)).filter(g => g.length).map(g => `<div class="tzs-grid">${g.map(([it, vi]) => vbFig(it, `01-V${si + 1}-${vi + 1}`)).join("")}</div>`).join("")}
+    </div>`).join("")}
+  </section>`;
 const tzSeries = () => `
   <section class="tzs" aria-label="TEAZEN 영상 시리즈">
     <div class="tzs-head"><span class="tzs-pill">Video Series · ${TZS.reduce((a, s) => a + s.items.length, 0)} Films</span><h4>CONTENTS</h4></div>
@@ -1401,7 +1432,7 @@ const metaHTML = t => {
   return p.map(x => `<span class="nb">${x}</span>`).join(" / ");
 };
 const view0 = id => IGP[id] ? caseHTML(id) + (id === "teazen" ? tzSeries() : "") : id === "gs" ? gsFeature : id === "skinfood" ? skinfoodHTML() : id === "aquapick" ? aquaHTML() : id === "primera" ? primeraHTML() : id === "olive" ? oliveHTML() : detail(byId[id]);
-const view = id => view0(id) + scHTML(id);
+const view = id => view0(id) + scHTML(id) + (id === "vital" ? vbExtra() : "");
 
 $("#chapters").innerHTML = CH.map(ch => `
   <section class="chapter" id="${ch.id}">
