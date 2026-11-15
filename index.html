@@ -496,7 +496,10 @@ body.slots .slot { display: block; }
 .vb3-ar { color: var(--accent); font: 700 18px var(--mono); text-align: center; }
 .vb3 .slot { position: static; justify-self: start; margin: 0 0 4px; box-shadow: none; }
 @media (max-width: 1024px) { .vb3 { grid-template-columns: minmax(0, 1fr); } }
-.sc-badge { display: inline-block; margin: 0 6px 4px 0; padding: 2px 8px; border-radius: 999px; font: 600 10.5px var(--mono); letter-spacing: .02em; color: var(--accent); border: 1px solid var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); vertical-align: 1px; }
+.tzs .sc .tzs-grid, .sc .tzs-grid { align-items: stretch; }
+.sc .tzs-grid figure { align-content: start; }
+.tzs-grid figure:has(> .sc-badge) { position: relative; }
+.sc-badge { position: absolute; left: 10px; top: 10px; z-index: 2; padding: 3px 9px; border-radius: 999px; font: 600 10.5px var(--mono); letter-spacing: .02em; color: var(--accent); border: 1px solid var(--accent); background: rgba(15,13,12,.72); backdrop-filter: blur(4px); pointer-events: none; }
 .exp-sub { color: var(--mute); font-weight: inherit; }
 .bt-video { margin: 0; position: relative; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,.02); }
 .bt-video video { width: 100%; max-width: 100%; aspect-ratio: 16/9; display: block; background: #000; }
@@ -1174,7 +1177,7 @@ const TZS = [{"k": "shot", "no": "01", "t": "Double Shot", "d": "2026.10", "n": 
 const SC = {"vital": [["h1", "메타그린 젤리 더블컷 · 6월", "9/16", "v"], ["h2", "NEW 슈퍼콜라겐 PDRN · 9월", "9/16", "v"], ["h3", "레티놀도, 맛있게 톡! · 10월", "9/16", "v"], ["h4", "MERRY MOMENTS, METAGREEN · 12월", "9/16", "v"]], "primera": [["pr1", "팩폼 티징 · 8월", "9/16", "v"], ["pr2", "3C 히알루론산 · 피드 01", "4/5", "i"], ["pr3", "3C 히알루론산 · 피드 02", "4/5", "i"]], "drcos": [["dc1", "Dr.COS 앰플 · AI 인물 광고", "9/16", "v"]], "drcos2": [["nm1", "노모크 토너패드", "9/16", "v"], ["nm2", "노모크 슬리핑팩 · 기상캐스터", "9/16", "v"], ["nm3", "노모크 · 햄찌", "9/16", "v"]], "chasing": [["cr1", "올리브영 블랙프라이데이 1P · 10월", "4/5", "v"], ["cr2", "블랙프라이데이 티징 · 10월", "9/16", "v", "Claude Automation"], ["cr3", "버블팩 티징 · 10월", "9/16", "v"], ["cr4", "영원할 건가 보다 · 10월", "9/16", "v", "Claude Automation"], ["cr5", "여행 계획 · 8월", "9/16", "v"], ["cr6", "여름 메이크업 솔루션 01 · 8월", "16/9", "v"], ["cr7", "여름 메이크업 솔루션 02 · 8월", "16/9", "v"], ["cr8", "여름 메이크업 솔루션 03 · 8월", "16/9", "v"]]};
 const scItem = ([k, t, r, kind, badge], code) => /^h\d$/.test(k) ? vbFig([k, t, r, kind], code) : `<figure>${tag(code)}${kind === "v"
   ? `<video src="img/sc-${k}.mp4" poster="img/sc-${k}.jpg" controls playsinline preload="none" style="aspect-ratio:${r}" aria-label="${esc(t)}"></video>`
-  : `<img src="img/sc-${k}.jpg" alt="${esc(t)}" loading="lazy" style="aspect-ratio:${r}">`}<figcaption>${badge ? `<span class="sc-badge">${esc(badge)}</span>` : ""}${esc(t)}</figcaption></figure>`;
+  : `<img src="img/sc-${k}.jpg" alt="${esc(t)}" loading="lazy" style="aspect-ratio:${r}">`}<figcaption>${esc(t)}</figcaption>${badge ? `<span class="sc-badge">${esc(badge)}</span>` : ""}</figure>`;
 const scHTML = id => { const s = SC[id]; if (!s) return ""; return `
   <section class="tzs sc" aria-label="대표 작업">
     <div class="tzs-head"><span class="tzs-pill">Selected Works · ${s.length}</span><h4>HIGHLIGHTS</h4></div>
