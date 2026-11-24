@@ -691,8 +691,8 @@ h1 .ko, h2 .ko, h3 .ko, h4 .ko, .ph-brand .ko, .ed-copy h4 .ko { letter-spacing:
   <div class="wrap">
     <a class="brand" href="#top">HONG YEONJIN<b>.</b></a>
     <nav aria-label="섹션">
-      <a href="#ch1">01</a>
-      <a href="#ch2">02</a>
+      <a href="#ch2">01</a>
+      <a href="#ch1">02</a>
       <a href="#ch3">03</a>
       <a href="#about" class="hide-s">About</a>
       <a href="#contact">Contact</a>
@@ -744,8 +744,8 @@ h1 .ko, h2 .ko, h3 .ko, h4 .ko, .ph-brand .ko, .ed-copy h4 .ko { letter-spacing:
 
   <section id="work" class="wrap">
     <nav class="chapters" aria-label="챕터">
-      <a href="#ch1"><span class="mono">01</span>Immersive &amp; Motion</a>
-      <a href="#ch2"><span class="mono">02</span>AI Commercial &amp; Brand Content</a>
+      <a href="#ch2"><span class="mono">01</span>AI Commercial &amp; Brand Content</a>
+      <a href="#ch1"><span class="mono">02</span>Immersive &amp; Motion</a>
       <a href="#ch3"><span class="mono">03</span>Tools I Built</a>
     </nav>
     <div id="chapters"></div>
@@ -912,24 +912,24 @@ const W = [
 ].map(([id,t,s,c,f,d,p,r,tool,desc]) => ({id,t,s,c,f,d,p,r,tool,desc}));
 
 const CH = [
-  { id: "ch1", no: "01", title: "Immersive & Motion",
-    lead: "VR · 공연 · 공간 · 3D · 타이틀. 무대와 화면 안에서 작동하는 모션 경험을 만들었습니다.",
-    cats: [
-      ["stage", "Immersive Concert & Stage Visuals", "콘서트, VR 공연, 대형 스크린처럼 무대와 공간 안에서 작동하는 모션그래픽."],
-      ["title", "Title, Opening & Entertainment Motion", "인트로, 오프닝, 타이틀, 브릿지. 영상의 시작과 분위기를 설계하는 모션디자인."],
-      ["3d", "3D Motion & Visualization", "Cinema 4D, Redshift, Octane, Simulation으로 만든 3D 오브젝트와 기술 시각화."] ] },
-  { id: "ch2", no: "02", title: "AI Commercial & Brand Content",
+  { id: "ch2", no: "01", title: "AI Commercial & Brand Content",
     lead: "키비주얼 기획, AI 이미지·영상, 컷편집, 모션그래픽, 릴스까지. AI로 실제 브랜드의 상업 콘텐츠를 완성합니다.",
     cats: [
       ["campaign", "Campaign & Creative Visual", "광고 콘셉트, 캠페인 방향, 키비주얼이 중심인 작업."],
       ["product", "Beauty & Product Content", "제품, 패키지, 뷰티 무드, 제형. AI로 제품을 브랜드답게 보여 주는 작업."],
       ["social", "Social & Motion Content", "인스타그램, 릴스, 숏폼. 브랜드 채널 포맷에 맞춰 편집하고 완성하는 작업."],
       ["human", "AI Human & Interview", "AI 인물의 일관성, 인터뷰 연출, 인물 기반 브랜드 콘텐츠."] ] },
+  { id: "ch1", no: "02", title: "Immersive & Motion",
+    lead: "VR · 공연 · 공간 · 3D · 타이틀. 무대와 화면 안에서 작동하는 모션 경험을 만들었습니다.",
+    cats: [
+      ["stage", "Immersive Concert & Stage Visuals", "콘서트, VR 공연, 대형 스크린처럼 무대와 공간 안에서 작동하는 모션그래픽."],
+      ["title", "Title, Opening & Entertainment Motion", "인트로, 오프닝, 타이틀, 브릿지. 영상의 시작과 분위기를 설계하는 모션디자인."],
+      ["3d", "3D Motion & Visualization", "Cinema 4D, Redshift, Octane, Simulation으로 만든 3D 오브젝트와 기술 시각화."] ] },
 ];
 const OLD = { "04":"stage","05":"stage","06":"stage","07":"stage",
   "11":"title","13":"title","14":"title","16":"title","15":"title","17":"title","10":"title",
-  "08":"3d","09":"3d","24":"3d", "18":"campaign","20":"campaign","19":"product","21":"human" };
-const ORDER = ["04","05","06","07","ces","22","11","12","13","14","16","15","17","10","08","09","dim","24",
+  "08":"3d","09":"3d","22":"3d","24":"3d", "18":"campaign","20":"campaign","19":"product","21":"human" };
+const ORDER = ["04","05","06","07","ces","11","12","13","14","16","15","17","10","09","22","08","dim","24",
   "gs","skinfood","olive","18","bhc","20","iherb","hancom","skin1004","primera","aquapick","19","itsskin","teazen","chasing","drcos","drcos2","21"];
 const SUBT = { "18": "Winter Campaign · AI 광고 엔딩 비주얼", "20": "AI Concept Film", "19": "AI Beauty / Viral Visuals" };
 const OLD_ROLES = { "18":["Concept","AI Image","AI Video","Edit"], "19":["AI Visual","AI Video","Motion"], "20":["Concept","AI Film"], "21":["AI Direction","Compositing"], "23":["Motion"] };
@@ -1040,7 +1040,7 @@ $("#track").innerHTML = strip + strip;
 const SLOT = { vital: "01", itsskin: "02", teazen: "03", gs: "04",
   "04": "05", "05": "06", "06": "07", "07": "08", "11": "09", "13": "10", "14": "11", "16": "12", "15": "13", "17": "14", "10": "15",
   "08": "16", "09": "17", dim: "18", "24": "19", "18": "20", bhc: "21", "20": "22", iherb: "23", hancom: "24",
-  skin1004: "25", primera: "26", aquapick: "27", olive: "28", "19": "29", chasing: "30", kmong: "31", drcos: "32", drcos2: "33", "21": "34", ces: "35", skinfood: "36" };
+  skin1004: "25", primera: "26", aquapick: "27", olive: "28", "19": "29", chasing: "30", kmong: "31", drcos: "32", drcos2: "33", "21": "34", ces: "35", skinfood: "36", "22": "39" };
 const tag = c => `<i class="slot">${c}</i>`;
 const card = w => `
   <button class="card" type="button" data-id="${w.id}">
