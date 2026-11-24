@@ -1030,6 +1030,7 @@ Object.assign(byId.iherb, { t: "iHerb", tab: "iHerb Wellness Playlist", tabSub: 
   roles: ["Concept Planning", "AI Visual Direction", "UI Design", "Sound"], links: [["영상 보기", "https://www.youtube.com/shorts/P9xYhMyhjpk"]] });
 Object.assign(byId.olive, { f: "Editorial", desc: "올더베러 웰니스 구미 AI 키비주얼 시리즈와 올리브영 매대 연출.",
   r: "AI Image / Key Visual / Typography / Retail Display", roles: ["AI Image", "Key Visual", "Retail Display"] });
+byId["22"].co = "Personal";
 
 // timeline strip (duplicated for seamless loop), built after the image overrides so it shows the final card images
 const strip = W.filter(w => !w.ph && w.img).map(w => `<img src="${w.img}" alt="" loading="lazy">`).join("");
