@@ -662,6 +662,20 @@ body.slots .slot { display: block; }
 @media (max-width: 600px) { .cr-feed { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 820px) { .cr-feat { grid-template-columns: minmax(0, 1fr); } .cr-feat video { max-width: 320px; } }
 
+/* BX Screen: anamorphic LED column */
+.bx video, .bx .sf-fig img { width: 100%; height: auto; display: block; border-radius: 6px; background: #000; }
+.bx .bx-note { margin: 0; max-width: 44em; color: #d6cec7; line-height: 1.75; }
+.bx-site { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s3); max-width: 760px; }
+.bx-guide { display: grid; grid-template-columns: minmax(0, 2.6fr) minmax(0, 1fr); gap: var(--s3); align-items: start; }
+.bx-concept { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: var(--s3); align-items: start; }
+.bx-swing { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: var(--s3); align-items: center; }
+.bx-swing > i { font-style: normal; color: var(--accent); font-size: 22px; }
+@media (max-width: 820px) {
+  .bx-guide, .bx-concept, .bx-swing { grid-template-columns: minmax(0, 1fr); }
+  .bx-swing > i { justify-self: center; transform: rotate(90deg); }
+  .bx-guide video { max-width: 320px; }
+}
+
 /* It's skin channel performance */
 .perf { border-top: 1px solid var(--line); padding-top: var(--s4); display: grid; gap: var(--s3); }
 .perf-row { display: flex; flex-wrap: wrap; gap: var(--s4) var(--s10); }
@@ -952,7 +966,7 @@ const OLD = { "04":"stage","05":"stage","06":"stage","07":"stage",
   "11":"title","13":"title","14":"title","16":"title","15":"title","17":"title","10":"title",
   "08":"3d","09":"3d","22":"3d","24":"3d", "18":"campaign","19":"product","21":"human" };
 const ORDER = ["04","05","06","07","ces","11","12","13","14","16","15","17","10","09","22","08","dim","24",
-  "gs","kreassive","olive","skinfood","18","bhc","iherb","hancom","skin1004","primera","aquapick","19","itsskin","teazen","chasing","drcos","drcos2","21"];
+  "gs","kreassive","bx","olive","skinfood","18","bhc","hancom","skin1004","primera","aquapick","19","itsskin","teazen","chasing","drcos","drcos2","21"];
 const SUBT = { "18": "Winter Campaign · AI 광고 엔딩 비주얼", "19": "AI Beauty / Viral Visuals" };
 const OLD_ROLES = { "18":["Concept","AI Image","AI Video","Edit"], "19":["AI Visual","AI Video","Motion"], "21":["AI Direction","Compositing"], "23":["Motion"] };
 for (let i = W.length - 1; i >= 0; i--) if (!OLD[W[i].id]) W.splice(i, 1);
@@ -978,8 +992,9 @@ const NEW = [
   { id: "skinfood", c: "campaign", t: "SKINFOOD", s: "Rebranding & Carrot Serum Launch · Bidding Proposal", co: "(주)한컴유디엠", d: "2026.11", f: "Proposal", ai: true, ph: false, img: "../img/p-skinfood.jpg", roles: ["Campaign Planning", "Key Visual", "AI Film"] },
   { id: "kreassive", c: "campaign", t: "Kreassive", s: "K-Beauty Sourcing OOH · CGI Landmark Film", co: "(주)한컴유디엠", d: "2026.11", f: "OOH Proposal", ai: true, ph: false, img: "../img/p-kreassive.jpg", p: 100,
     r: "Key Visual / CGI OOH Film / AI Image & Video / Compositing / Motion", tool: "Higgsfield / Kling / Nano Banana / After Effects / Photoshop", roles: ["OOH Key Visual", "CGI OOH Film", "AI Video"] },
+  { id: "bx", c: "campaign", t: "BX Screen", s: "Anamorphic LED Column · Christmas Santa Bear", co: "Freelance", d: "2026.11", f: "Anamorphic", ai: false, ph: false, img: "../img/p-bx.jpg",
+    r: "Anamorphic Visual / Screen Mapping / UV Guide / Preview Tool", tool: "", roles: ["Anamorphic", "UV Guide", "Preview Tool"] },
   { id: "bhc", c: "campaign", t: "BHC", s: "콰삭킹 AI Commercial · AI 숏폼 광고", co: "(주)한컴유디엠", d: "—", f: "AI Commercial", ai: true, roles: ["AI Commercial", "Short-form"] },
-  { id: "iherb", c: "campaign", t: "iHerb", s: "AI Competition", co: "(주)한컴유디엠", d: "2026.07", f: "9:16", ai: true, roles: ["AI Concept", "AI Video"] },
   { id: "skin1004", c: "product", t: "SKIN1004", s: "AI Product Film", co: "Personal", d: "2026.09", f: "9:16", ai: true, roles: ["AI Video"] },
   { id: "primera", c: "product", t: "PRIMERA", s: "AI Beauty Film & Image", co: "(주)한컴유디엠", d: "2026.08", f: "9:16 · 4:5", ai: true, roles: ["AI Video", "AI Image"] },
   { id: "aquapick", c: "product", t: "AQUAPICK", s: "3D Product / AI UV Film", co: "(주)한컴유디엠", d: "2026.10", f: "4:5", ai: true, roles: ["Product 3D", "AI Drawing", "AI UV Video"] },
@@ -1025,7 +1040,7 @@ byId.teazen.img = "../img/g-tz-1.jpg"; byId.teazen.f = "Case Study";
 Object.assign(byId.teazen, { s: "Video Editing · AI Film · Motion Graphics · Reels", d: "2026.03 — Present", roles: ["Video Editing", "AI Film", "Motion Graphics", "Reels"] });
 byId.itsskin.img = "../img/g-its-1.jpg"; byId.itsskin.f = "Case Study";
 // images the owner supplied through the slot folders
-const IMG_OVR = { vital: "../img/vital-card.jpg", bhc: "../img/p-bhc.jpg", iherb: "../img/p-iherb.jpg", skin1004: "../img/p-skin1004.jpg",
+const IMG_OVR = { vital: "../img/vital-card.jpg", bhc: "../img/p-bhc.jpg", skin1004: "../img/p-skin1004.jpg",
   primera: "../img/p-primera.jpg", aquapick: "../img/p-aquapick.jpg", olive: "../img/p-olive.jpg", drcos2: "../img/p-drcos2.jpg",
   itsskin: "../img/its-card.jpg", teazen: "../img/tz-card-kombucha.jpg", "19": "../img/p-lush.jpg", "21": "../img/p-antman.jpg" };
 Object.entries(IMG_OVR).forEach(([k, v]) => { if (byId[k]) Object.assign(byId[k], { img: v, ph: false }); });
@@ -1046,12 +1061,6 @@ Object.assign(byId.bhc, { t: "BHC 콰삭킹", s: "AI Commercial Film", co: "Cali
   desc: "씹는 순간 들리는 소리를 눈으로 먼저 느끼게 만들고 싶었습니다. BHC ‘콰삭킹’을 주제로 실제 콘티를 기반으로 제작한 20초 분량의 AI 숏폼 광고입니다. 콰삭킹의 핵심인 ‘콰사사사삭’ 식감을 단순한 치킨 비주얼로 표현하는 데 그치지 않고, 튀김 조각의 질감과 움직임을 통해 감각적으로 시각화하는 데 집중했습니다. 생성형 AI로 베이스 비주얼을 제작했으며, 후반 작업에서는 색보정과 속도, 대비를 정교하게 조정해 상업 광고 톤에 맞는 밀도로 완성했습니다.",
   r: "Concept Planning / AI Visual Direction / Prompt Design / Edit", tool: "VEO3 / Nano Banana / Kling / After Effects",
   roles: ["Concept Planning", "AI Visual Direction", "AI Commercial"], links: [["영상 보기", "https://www.youtube.com/watch?v=SPNYnS-wXKU"]] });
-Object.assign(byId.iherb, { t: "iHerb", tab: "iHerb Wellness Playlist", tabSub: "Contest Entry · AI Commercial Film",
-  hl: "Good Day, Press Play", hlKo: "좋은 하루를 재생하는 방법", s: "iHerb Contest Entry · AI Wellness Commercial", f: "AI Commercial", d: "2026.10", p: 100, co: "Personal",
-  desc: "iHerb 공모전 출품을 위해 제작한 AI 웰니스 광고 영상입니다.\n매일 챙기는 영양제 루틴을 음악 플레이리스트에 빗대어 아침, 출근길, 업무 시간, 하루의 마무리를 각각 하나의 ‘트랙’으로 구성했습니다.\n잔잔한 아침에서 경쾌한 리듬으로 전환되는 사운드와 비주얼을 통해 하루가 시작되는 에너지를 표현했으며, 기획부터 AI 이미지·영상 생성, UI 디자인, 편집과 사운드 연출까지 전체 제작을 진행했습니다.",
-
-  r: "Concept Planning / AI Visual Direction / Prompt Design / UI Design / Image & Video Generation / Edit / Sound Direction", tool: "Kling / VEO3 / Nano Banana / After Effects / Premiere Pro",
-  roles: ["Concept Planning", "AI Visual Direction", "UI Design", "Sound"], links: [["영상 보기", "https://www.youtube.com/shorts/P9xYhMyhjpk"]] });
 Object.assign(byId.olive, { f: "Editorial", desc: "올더베러 웰니스 구미 AI 키비주얼 시리즈와 올리브영 매대 연출.",
   r: "AI Image / Key Visual / Typography / Retail Display", roles: ["AI Image", "Key Visual", "Retail Display"] });
 byId["22"].co = "Personal";
@@ -1064,7 +1073,7 @@ $("#track").innerHTML = strip + strip;
 // image slot numbers, shown only after pressing N (or opening with #n)
 const SLOT = { vital: "01", itsskin: "02", teazen: "03", gs: "04",
   "04": "05", "05": "06", "06": "07", "07": "08", "11": "09", "13": "10", "14": "11", "16": "12", "15": "13", "17": "14", "10": "15",
-  "08": "16", "09": "17", dim: "18", "24": "19", "18": "20", bhc: "21", kreassive: "22", iherb: "23", hancom: "24",
+  "08": "16", "09": "17", dim: "18", "24": "19", "18": "20", bhc: "21", kreassive: "22", bx: "40", hancom: "24",
   skin1004: "25", primera: "26", aquapick: "27", olive: "28", "19": "29", chasing: "30", kmong: "31", drcos: "32", drcos2: "33", "21": "34", ces: "35", skinfood: "36", "22": "39" };
 const tag = c => `<i class="slot">${c}</i>`;
 const card = w => `
@@ -1424,6 +1433,63 @@ const kreassiveHTML = () => `
       </div>
     </section>
   </article>`;
+// BX Screen: anamorphic LED column, freelance
+const BX_V = (src, w, h, alt) => `<video src="../img/${src}.mp4" poster="../img/${src}.jpg" width="${w}" height="${h}" muted loop playsinline autoplay preload="none" aria-label="${alt}"></video>`;
+const bxHTML = () => `
+  <article class="aq bx">
+    <div class="sw">${BX_V("bx-hero", 1180, 772, "기둥형 LED 스크린에서 산타곰이 그네를 타는 현장 영상")}${tag("40")}</div>
+    <div class="aq-intro">
+      <div class="aq-text">
+        <div class="mono">Freelance · 2026.11 · Anamorphic</div>
+        <h4>BX Screen</h4>
+        <div class="case-sub">Anamorphic Visual · Screen Mapping · UV Guide · Preview Tool</div>
+        <p>기둥을 감싼 4면 LED 스크린에서 산타곰이 그네를 타고 앞으로 나오는 <span class="nb">크리스마스 아나몰픽 영상입니다.</span> <span class="nb">개인 외주로 작업했습니다.</span></p>
+        <p>입체로 보이도록 스크린 비율을 맞추고 화각을 고려해 <span class="nb">크기를 섬세하게 조정했습니다.</span></p>
+        <p>가이드를 직접 제작해 현장에서 맞춰 보고, <span class="nb">테스트 프로그램까지 개발해</span> 작업했습니다.</p>
+        <div class="roles big"><span>Anamorphic</span><span>Screen Mapping</span><span>UV Guide</span><span>Preview Tool</span></div>
+      </div>
+      <ol class="aq-steps">
+        <li><b>01</b><div><strong>Ratio</strong><span>4면을 한 장으로 펼쳐 스크린 비율과 화각을 확인</span></div></li>
+        <li><b>02</b><div><strong>Guide</strong><span>UV 가이드를 만들어 현장 스크린에 맞춰 봄</span></div></li>
+        <li><b>03</b><div><strong>Preview</strong><span>직접 개발한 프로그램으로 현장에 가기 전에 테스트</span></div></li>
+      </ol>
+    </div>
+    <section class="aq-sec">
+      <div class="aq-label"><b>01</b>Ratio Test<span>4면을 한 화면으로</span></div>
+      <div class="bx-concept">
+        <figure class="sf-fig"><img src="../img/bx-concept.jpg" width="1600" height="720" alt="석상이 화면 밖으로 발을 내미는 테스트 시안" loading="lazy"><figcaption><b>Concept</b>테스트 시안</figcaption></figure>
+        <figure class="sf-fig"><img src="../img/bx-ratio.jpg" width="1024" height="1536" alt="4면 비율 구분과 현장 기둥에 얹어 본 목업" loading="lazy"><figcaption><b>Ratio</b>면 구분과 현장 목업</figcaption></figure>
+      </div>
+    </section>
+    <section class="aq-sec">
+      <div class="aq-label"><b>02</b>UV Guide<span>직접 만든 가이드로 현장에서 확인</span></div>
+      <div class="bx-guide">
+        <figure class="sf-fig"><img src="../img/bx-guide.jpg" width="1600" height="720" alt="1부터 4까지 면을 나눈 UV 가이드" loading="lazy"><figcaption><b>Guide</b>면 번호와 격자, 중심선을 넣은 UV 가이드</figcaption></figure>
+        <figure class="sf-fig">${BX_V("bx-uv", 700, 900, "현장 LED 기둥에 UV 가이드를 띄운 영상")}<figcaption><b>On-site</b>현장 테스트</figcaption></figure>
+      </div>
+    </section>
+    <section class="aq-sec">
+      <div class="aq-label"><b>03</b>Preview Tool<span>직접 개발한 3D 테스트 프로그램</span></div>
+      <figure class="sf-fig">${BX_V("bx-3d", 1600, 918, "보는 위치와 화각을 바꿔 가며 기둥 스크린을 미리 보는 프로그램 화면")}<figcaption><b>Tool</b>거리, 눈높이, 화각을 바꿔 보는 미리보기</figcaption></figure>
+      <p class="bx-note">영상을 기둥에 입혀 여러 위치에서 미리 볼 수 있는 프로그램을 직접 개발했습니다. <span class="nb">클라이언트 피드백을 빠르게 받고,</span> <span class="nb">현장에 가서 하나씩 맞춰 보는 시간을 줄였습니다.</span></p>
+    </section>
+    <section class="aq-sec">
+      <div class="aq-label"><b>04</b>Screen Film<span>4면에 이어지는 한 편의 영상</span></div>
+      <div class="bx-swing">
+        <figure class="sf-fig"><img src="../img/bx-start.jpg" width="1400" height="630" alt="그네에 앉은 산타곰 시작 장면" loading="lazy"><figcaption><b>Start</b>방 안쪽의 산타곰</figcaption></figure>
+        <i aria-hidden="true">→</i>
+        <figure class="sf-fig"><img src="../img/bx-end.jpg" width="1400" height="630" alt="그네를 타고 앞으로 나온 산타곰 장면" loading="lazy"><figcaption><b>End</b>앞으로 크게 나온 산타곰</figcaption></figure>
+      </div>
+      <figure class="sf-fig">${BX_V("bx-film", 1602, 720, "산타곰이 그네를 타는 4면 펼침 스크린 영상")}<figcaption><b>Film</b>스크린 영상</figcaption></figure>
+    </section>
+    <section class="aq-sec">
+      <div class="aq-label"><b>05</b>On-site<span>정면과 측면에서 본 현장</span></div>
+      <div class="bx-site">
+        <figure class="sf-fig">${BX_V("bx-front", 700, 1080, "모서리 정면에서 본 산타곰 아나몰픽 스크린")}<figcaption><b>Front</b>정면</figcaption></figure>
+        <figure class="sf-fig">${BX_V("bx-side", 700, 1036, "기둥을 돌며 본 산타곰 스크린의 옆면")}<figcaption><b>Side</b>측면</figcaption></figure>
+      </div>
+    </section>
+  </article>`;
 // AQUAPICK: shoot → blueprint of hidden parts → 3D UV motion
 const aquaHTML = () => `
   <article class="aq">
@@ -1557,7 +1623,7 @@ const metaHTML = t => {
   if (p.length > 1 && p[p.length - 1].length <= 8) p.splice(-2, 2, p[p.length - 2] + " / " + p[p.length - 1]);
   return p.map(x => `<span class="nb">${x}</span>`).join(" / ");
 };
-const view0 = id => IGP[id] ? caseHTML(id) + (id === "teazen" ? tzSeries() : id === "chasing" ? crFeature() : "") : id === "gs" ? gsFeature : id === "skinfood" ? skinfoodHTML() : id === "kreassive" ? kreassiveHTML() : id === "aquapick" ? aquaHTML() : id === "primera" ? primeraHTML() : id === "olive" ? oliveHTML() : detail(byId[id]);
+const view0 = id => IGP[id] ? caseHTML(id) + (id === "teazen" ? tzSeries() : id === "chasing" ? crFeature() : "") : id === "gs" ? gsFeature : id === "skinfood" ? skinfoodHTML() : id === "kreassive" ? kreassiveHTML() : id === "bx" ? bxHTML() : id === "aquapick" ? aquaHTML() : id === "primera" ? primeraHTML() : id === "olive" ? oliveHTML() : detail(byId[id]);
 const view = id => view0(id) + scHTML(id) + (id === "vital" ? vbExtra() : "");
 
 $("#chapters").innerHTML = CH.map(ch => `
