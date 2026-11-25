@@ -645,6 +645,14 @@ body.slots .slot { display: block; }
   .pr-frames { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+/* PRIMERA × Pokémon: equal-height row, nothing cropped (copyright lines stay visible) */
+.pk-row { display: flex; gap: var(--s3); align-items: flex-start; }
+.pk-row > figure { flex: .5625 1 0; min-width: 0; }
+.pk-row > figure.w45 { flex-grow: .8; }
+.pk-row video, .pk-row img { width: 100%; height: auto; display: block; border-radius: 6px; background: #e8b80a; }
+.pk-row.two { max-width: 560px; }
+@media (max-width: 820px) { .pk-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } .pk-row > figure.w45 { grid-column: 1 / -1; } }
+
 /* It's skin channel performance */
 .perf { border-top: 1px solid var(--line); padding-top: var(--s4); display: grid; gap: var(--s3); }
 .perf-row { display: flex; flex-wrap: wrap; gap: var(--s4) var(--s10); }
@@ -1481,6 +1489,18 @@ const primeraHTML = () => { const w = byId.primera; return `
     <section class="aq-sec">
       <div class="aq-label"><b>01</b>Key Frames<span>수분 증폭 장치가 작동하는 순서</span></div>
       <div class="pr-frames">${PR_FRAMES.map(([n, t], i) => `<figure><img src="img/pr-${i + 1}.jpg" alt="${t}" loading="lazy"><figcaption><b>${n}</b> ${t}</figcaption></figure>`).join("")}</div>
+    </section>
+    <section class="aq-sec">
+      <div class="aq-label"><b>02</b>OLIVE YOUNG × Pokémon<span>2026년 5월 콜라보 인스타그램 콘텐츠</span></div>
+      <div class="pk-row">
+        <figure class="sf-fig"><video src="img/pk-1.mp4" poster="img/pk-1.jpg" width="720" height="1280" muted loop playsinline autoplay controls preload="none" aria-label="피카츄 실루엣이 밝혀지며 콜라보를 알리는 영상"></video><figcaption>콜라보 정식 발표</figcaption></figure>
+        <figure class="sf-fig"><video src="img/pk-2.mp4" poster="img/pk-2.jpg" width="720" height="1280" muted loop playsinline autoplay controls preload="none" aria-label="배터리가 충전되며 겔 마스크 3종이 나타나는 영상"></video><figcaption>겔 마스크 3종 · 배터리 충전 콘셉트</figcaption></figure>
+        <figure class="sf-fig w45"><video src="img/pk-3.mp4" poster="img/pk-3.jpg" width="720" height="900" muted loop playsinline autoplay controls preload="none" aria-label="비타티놀 세럼에 포켓몬 스티커가 붙는 영상"></video><figcaption>올리브영 5월 혜택 · 스티커 연출</figcaption></figure>
+      </div>
+      <div class="pk-row two">
+        <figure class="sf-fig"><img src="img/pk-s1.jpg" width="1080" height="1920" alt="올리브영 × 포켓몬 에디션 스페셜 오특 스토리" loading="lazy"><figcaption>스토리 · 스페셜 오특</figcaption></figure>
+        <figure class="sf-fig"><img src="img/pk-s2.jpg" width="1080" height="1920" alt="프리메라 올영 LIVE 안내 스토리" loading="lazy"><figcaption>스토리 · 올영 LIVE</figcaption></figure>
+      </div>
     </section>
   </article>`; };
 
