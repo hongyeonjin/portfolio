@@ -1443,51 +1443,53 @@ const bxHTML = () => `
         <div class="mono">Freelance · 2026.11 · Anamorphic</div>
         <h4>BX Screen</h4>
         <div class="case-sub">Anamorphic Visual · Screen Mapping · UV Guide · Preview Tool</div>
-        <p>기둥을 감싼 4면 LED 스크린에서 산타곰이 그네를 타고 앞으로 나오는 <span class="nb">크리스마스 아나몰픽 영상입니다.</span> <span class="nb">개인 외주로 작업했습니다.</span></p>
-        <p>입체로 보이도록 스크린 비율을 맞추고 화각을 고려해 <span class="nb">크기를 섬세하게 조정했습니다.</span></p>
-        <p>가이드를 직접 제작해 현장에서 맞춰 보고, <span class="nb">테스트 프로그램까지 개발해</span> 작업했습니다.</p>
+        <div class="pd-hl bx-hl">보는 자리에서 완성되는 공간</div>
+        <p>기둥을 감싼 4면 LED 스크린을 <span class="nb">하나의 입체 공간으로 확장한</span> <span class="nb">크리스마스 아나몰픽 작업입니다.</span> 산타곰이 그네를 타고 화면 밖으로 다가오는 장면에 <span class="nb">입체감과 몰입감을 담았습니다.</span></p>
+        <p>스크린 비율과 관람 위치의 화각을 기준으로 <span class="nb">원근과 크기를 세밀하게 조율해,</span> 모서리에서 만나는 두 면이 <span class="nb">하나의 깊이로 이어지도록</span> 했습니다.</p>
+        <p>UV 가이드를 직접 제작해 현장에서 검증하고, <span class="nb">3D 미리보기 프로그램을 자체 개발해</span> 제작부터 현장 적용까지 <span class="nb">결과를 예측하며 진행했습니다.</span></p>
         <div class="roles big"><span>Anamorphic</span><span>Screen Mapping</span><span>UV Guide</span><span>Preview Tool</span></div>
       </div>
       <ol class="aq-steps">
-        <li><b>01</b><div><strong>Ratio</strong><span>4면을 한 장으로 펼쳐 스크린 비율과 화각을 확인</span></div></li>
-        <li><b>02</b><div><strong>Guide</strong><span>UV 가이드를 만들어 현장 스크린에 맞춰 봄</span></div></li>
-        <li><b>03</b><div><strong>Preview</strong><span>직접 개발한 프로그램으로 현장에 가기 전에 테스트</span></div></li>
+        <li><b>01</b><div><strong>Screen Mapping</strong><span>네 면을 3846×1730 한 화면으로 펼쳐 비율과 화각을 정리</span></div></li>
+        <li><b>02</b><div><strong>UV Guide</strong><span>가이드를 자체 제작해 실제 LED 기둥에서 검증</span></div></li>
+        <li><b>03</b><div><strong>Preview Tool</strong><span>3D 미리보기 프로그램을 개발해 피드백과 현장 조율 시간을 단축</span></div></li>
       </ol>
     </div>
     <section class="aq-sec">
-      <div class="aq-label"><b>01</b>Ratio Test<span>4면을 한 화면으로</span></div>
+      <div class="aq-label"><b>01</b>Screen Mapping<span>네 면을 잇는 비율과 화각</span></div>
       <div class="bx-concept">
-        <figure class="sf-fig"><img src="../img/bx-concept.jpg" width="1600" height="720" alt="석상이 화면 밖으로 발을 내미는 테스트 시안" loading="lazy"><figcaption><b>Concept</b>테스트 시안</figcaption></figure>
-        <figure class="sf-fig"><img src="../img/bx-ratio.jpg" width="1024" height="1536" alt="4면 비율 구분과 현장 기둥에 얹어 본 목업" loading="lazy"><figcaption><b>Ratio</b>면 구분과 현장 목업</figcaption></figure>
+        <figure class="sf-fig"><img src="../img/bx-concept.jpg" width="1600" height="720" alt="석상이 화면 밖으로 발을 내미는 테스트 시안" loading="lazy"><figcaption><b>Concept</b>프레임 밖으로 나오는 입체감을 확인한 초기 시안</figcaption></figure>
+        <figure class="sf-fig"><img src="../img/bx-ratio.jpg" width="1024" height="1536" alt="4면 비율 구분과 현장 기둥에 얹어 본 목업" loading="lazy"><figcaption><b>Ratio</b>면 분할과 현장 적용 목업</figcaption></figure>
       </div>
     </section>
     <section class="aq-sec">
-      <div class="aq-label"><b>02</b>UV Guide<span>직접 만든 가이드로 현장에서 확인</span></div>
+      <div class="aq-label"><b>02</b>UV Guide<span>현장에서 검증한 자체 제작 가이드</span></div>
       <div class="bx-guide">
-        <figure class="sf-fig"><img src="../img/bx-guide.jpg" width="1600" height="720" alt="1부터 4까지 면을 나눈 UV 가이드" loading="lazy"><figcaption><b>Guide</b>면 번호와 격자, 중심선을 넣은 UV 가이드</figcaption></figure>
-        <figure class="sf-fig">${BX_V("bx-uv", 700, 900, "현장 LED 기둥에 UV 가이드를 띄운 영상")}<figcaption><b>On-site</b>현장 테스트</figcaption></figure>
+        <figure class="sf-fig"><img src="../img/bx-guide.jpg" width="1600" height="720" alt="1부터 4까지 면을 나눈 UV 가이드" loading="lazy"><figcaption><b>Guide</b>면 번호, 격자, 중심선으로 면의 경계와 왜곡을 확인하는 UV 가이드</figcaption></figure>
+        <figure class="sf-fig">${BX_V("bx-uv", 700, 900, "현장 LED 기둥에 UV 가이드를 띄운 영상")}<figcaption><b>On-site</b>실제 LED 기둥 매핑 테스트</figcaption></figure>
       </div>
     </section>
     <section class="aq-sec">
-      <div class="aq-label"><b>03</b>Preview Tool<span>직접 개발한 3D 테스트 프로그램</span></div>
-      <figure class="sf-fig">${BX_V("bx-3d", 1600, 918, "보는 위치와 화각을 바꿔 가며 기둥 스크린을 미리 보는 프로그램 화면")}<figcaption><b>Tool</b>거리, 눈높이, 화각을 바꿔 보는 미리보기</figcaption></figure>
-      <p class="bx-note">영상을 기둥에 입혀 여러 위치에서 미리 볼 수 있는 프로그램을 직접 개발했습니다. <span class="nb">클라이언트 피드백을 빠르게 받고,</span> <span class="nb">현장에 가서 하나씩 맞춰 보는 시간을 줄였습니다.</span></p>
+      <div class="aq-label"><b>03</b>Preview Tool<span>현장을 미리 보는 자체 개발 프로그램</span></div>
+      <figure class="sf-fig">${BX_V("bx-3d", 1600, 918, "보는 위치와 화각을 바꿔 가며 기둥 스크린을 미리 보는 프로그램 화면")}<figcaption><b>Tool</b>거리, 눈높이, 화각에 따른 입체감 시뮬레이션</figcaption></figure>
+      <p class="bx-note">실제 기둥 형태에 영상을 입히고 거리와 눈높이, 화각을 바꿔 가며 <span class="nb">입체감을 검토할 수 있는 프로그램을</span> <span class="nb">직접 개발했습니다.</span> 클라이언트와 같은 화면을 보며 피드백을 빠르게 반영하고, <span class="nb">현장을 오가며 하나씩 맞추던</span> <span class="nb">시간을 줄였습니다.</span></p>
     </section>
     <section class="aq-sec">
-      <div class="aq-label"><b>04</b>Screen Film<span>4면에 이어지는 한 편의 영상</span></div>
+      <div class="aq-label"><b>04</b>Screen Film<span>네 면을 하나로 잇는 장면</span></div>
       <div class="bx-swing">
-        <figure class="sf-fig"><img src="../img/bx-start.jpg" width="1400" height="630" alt="그네에 앉은 산타곰 시작 장면" loading="lazy"><figcaption><b>Start</b>방 안쪽의 산타곰</figcaption></figure>
+        <figure class="sf-fig"><img src="../img/bx-start.jpg" width="1400" height="630" alt="그네에 앉은 산타곰 시작 장면" loading="lazy"><figcaption><b>Start</b>오두막 안쪽의 깊이</figcaption></figure>
         <i aria-hidden="true">→</i>
-        <figure class="sf-fig"><img src="../img/bx-end.jpg" width="1400" height="630" alt="그네를 타고 앞으로 나온 산타곰 장면" loading="lazy"><figcaption><b>End</b>앞으로 크게 나온 산타곰</figcaption></figure>
+        <figure class="sf-fig"><img src="../img/bx-end.jpg" width="1400" height="630" alt="그네를 타고 앞으로 나온 산타곰 장면" loading="lazy"><figcaption><b>End</b>화면 앞으로 다가오는 산타곰</figcaption></figure>
       </div>
-      <figure class="sf-fig">${BX_V("bx-film", 1602, 720, "산타곰이 그네를 타는 4면 펼침 스크린 영상")}<figcaption><b>Film</b>스크린 영상</figcaption></figure>
+      <figure class="sf-fig">${BX_V("bx-film", 1602, 720, "산타곰이 그네를 타는 4면 펼침 스크린 영상")}<figcaption><b>Film</b>4면 펼침 스크린 영상</figcaption></figure>
     </section>
     <section class="aq-sec">
-      <div class="aq-label"><b>05</b>On-site<span>정면과 측면에서 본 현장</span></div>
+      <div class="aq-label"><b>05</b>On-site<span>현장에서 완성된 입체감</span></div>
       <div class="bx-site">
-        <figure class="sf-fig">${BX_V("bx-front", 700, 1080, "모서리 정면에서 본 산타곰 아나몰픽 스크린")}<figcaption><b>Front</b>정면</figcaption></figure>
-        <figure class="sf-fig">${BX_V("bx-side", 700, 1036, "기둥을 돌며 본 산타곰 스크린의 옆면")}<figcaption><b>Side</b>측면</figcaption></figure>
+        <figure class="sf-fig">${BX_V("bx-front", 700, 1080, "모서리 정면에서 본 산타곰 아나몰픽 스크린")}<figcaption><b>Front</b>정면에서 보는 입체 장면</figcaption></figure>
+        <figure class="sf-fig">${BX_V("bx-side", 700, 1036, "기둥을 돌며 본 산타곰 스크린의 옆면")}<figcaption><b>Side</b>기둥을 따라 이어지는 옆면</figcaption></figure>
       </div>
+      <p class="bx-note">정면에서는 산타곰이 화면 밖으로 다가오고, <span class="nb">기둥을 따라 돌면 오두막의 외벽이 이어집니다.</span> 현장에서 크기와 비율을 다시 확인하며 <span class="nb">공간에 어울리는 몰입감을 완성했습니다.</span></p>
     </section>
   </article>`;
 // AQUAPICK: shoot → blueprint of hidden parts → 3D UV motion
